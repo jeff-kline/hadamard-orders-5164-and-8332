@@ -16,5 +16,6 @@ abstract: >-
   A real weighing matrix of order q+3 and weight q+1 gives an ordinary
   Hadamard matrix of order 4(q+2) whenever q is prime and congruent to 1
   modulo 4. Two known weighing matrices give orders 5164 and 8332,
-  listed as open in the November 2026 census. Historical priority remains
+  listed as open in the 2026 survey by Egan, Kotsireas, London and Ó Catháin
+  (arXiv:2610.27175v2). Historical priority remains
   provisional.

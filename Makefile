@@ -29,6 +29,9 @@ verify-full:
 	@"$(FULL_PY)" evidence/build.py 520 g1 > build/full-8332.json
 	@jq -es --argjson expected '[8332,523536,520,"g1",2081,[2084,2082]]' -f evidence/check-full.jq build/full-8332.json >/dev/null
 	@echo 'MATCH 8332 full sign and Gram checks'
+	@jq -r '[.order, .matrix_sha256] | map(tostring) | join(" ")' build/full-5164.json build/full-8332.json > build/matrix-sha256.txt
+	@diff -u evidence/matrix-sha256.txt build/matrix-sha256.txt
+	@echo 'MATCH row-major int8 matrix SHA-256 for both orders'
 
 paper:
 	@mkdir -p build/tex

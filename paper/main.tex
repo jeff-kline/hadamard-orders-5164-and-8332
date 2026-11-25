@@ -12,7 +12,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We construct real Hadamard matrices of orders 5164 and 8332, both listed as open in version 2 of the 2026 survey of Egan, Kotsireas, London and \'{O} Cath\'ain. For every prime $q\equiv1\pmod4$, we prove that a real weighing matrix of order $q+3$ and weight $q+1$ gives a Hadamard matrix of order $4(q+2)$. Conjugation by a 45-degree rotation in one block of Kumar's array admits the reflection cells that arise from a real weighing matrix. Two weighing matrices constructed by Gysin and Seberry in 1995 then give the stated orders.
+We construct real Hadamard matrices of orders 5164 and 8332, both listed as open in the 2026 survey by Egan, Kotsireas, London and \'{O} Cath\'ain (arXiv:2610.27175v2). For every prime $q\equiv1\pmod4$, we prove that a real weighing matrix of order $q+3$ and weight $q+1$ gives a Hadamard matrix of order $4(q+2)$. Conjugation by a 45-degree rotation in one block of Kumar's array admits the reflection cells that arise from a real weighing matrix. Two weighing matrices constructed by Gysin and Seberry in 1995 then give the stated orders.
 \end{abstract}
 \section{The construction}
 A real Hadamard matrix of order $h$ has entries $\pm1$ and mutually orthogonal rows. A real weighing matrix $W(N,w)$ has entries $0,\pm1$ and satisfies $WW^T=wI_N$. Kumar identified quaternary conference matrices of orders 646 and 1042 as sufficient for the two Hadamard orders considered here. We extend his array to use any real weighing matrix with the parameters below. \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/FRONTIER.md}{Kumar's frontier table}.
@@ -90,7 +90,7 @@ We located no earlier construction of either order. The full text of Lou, Xia an
 
 The accompanying C++ verifier checks all required Golay and Yamada sequence correlations for both applications. Two end-to-end examples at order 76 exercise the two Golay constructions. In a separate reflection example, omitting the conjugation yields 64 failed Gram-block checks. Including it satisfies every check. The C++ verifier uses only one-dimensional inputs at the target orders.
 
-A separate implementation reused the Yamada circulant generator and built both target matrices. Its verification report records that all entries were signs and that $HH^T=hI_h$ at both $h=5164$ and $h=8332$. For signs, each scalar product is an integer sum of $h$ terms of magnitude one. In ordinary binary32 accumulation, every intermediate integer sum has magnitude at most $h<2^{24}$ and is exactly representable. The review package includes the report. Its routine C++ checks use the one-dimensional inputs.
+The release target \texttt{make verify-full} constructs each matrix, checks that every entry is a sign, and compares the entire row Gram matrix with $hI_h$ for $h=5164$ and $h=8332$. Each dot product is a sum of $h$ signs. Every binary32 partial sum has integer magnitude at most $h<2^{24}$, so the comparison is exact. The target also checks the SHA-256 digest of each matrix in row-major signed-byte order.
 
 \paragraph{Role of AI.} AI assisted the derivations, the computer verification, the literature search and the exposition under the author's direction. Process-separated AI reviews checked the proofs and certificates; they are not independent expert peer review, and no independent human expert has examined the proofs. The release repository records the sources, the reviews and their dispositions.
 

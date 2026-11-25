@@ -33,12 +33,12 @@ Seberry and Yamada’s historical table records Hadamard orders $8\cdot1291=1032
 |---|---|
 | General transfer | Algebraic proof and separate AI proof review |
 | Inputs at both orders | Exact sequence correlations checked in C++ |
-| Every entry and the full Gram matrix at both orders | Separate implementation reported by Claude |
+| Every entry and the full Gram matrix at both orders | `make verify-full` checks both complete matrices against the sign and Gram identities, then matches their SHA-256 digests. |
 | Historical priority | Both census entries verified. The 2019 T-matrix cases remain unresolved. |
 
 The proof establishes orthogonality for the whole family. The C++17 verifier checks every required correlation in the input sequences for both target orders. It also checks two examples of order 76 end to end. A separate example with a reflection gives 64 failing Gram-block checks when the conjugation is omitted and zero when it is included. The C++ check uses one-dimensional sequences at the target parameters. [Audited derivation](kumar-weighing-transfer.md) · [Verifier source](arith/kumar-dihedral-control.cpp)
 
-Claude separately implemented the construction and reported checking every entry and every row inner product at both target orders. Its implementation reused the Yamada circulant generator. At order 300, the same inputs passed with the conjugation and failed when it was omitted. [Independent implementation report](evidence/claude-report.md) · [Verification scope and provenance](VERIFICATION.md)
+At order 300, the same inputs pass the full Gram check with the conjugation and fail when it is omitted. [Verification record](VERIFICATION.md) · [Review history](kumar-weighing-audit/ATTRIBUTION.md)
 
 ## Reproduce
 
@@ -48,7 +48,7 @@ Run the bounded checks from the repository root.
 make verify
 ~~~
 
-The optional `make verify-full` target reproduces Claude’s full-matrix checks sequentially. Peak memory reported at order 8332 was 2.2 GB. [Dependencies and verification record](VERIFICATION.md)
+The optional `make verify-full` builds both target matrices sequentially. A fresh-clone run of the full Gram checks took 44 seconds on one core. The order-8332 build used about 2.2 GB. [Dependencies and verification record](VERIFICATION.md)
 
 ## Role of AI
 

@@ -8,6 +8,7 @@ Usage: python build.py control        (orders 76 (both forms), 172, 300 + negati
        python build.py 520 g1         (order 8332)
 Written from the theorem statement only; Yamada's circulants from ../certify/certify.py.
 """
+import hashlib
 import sys, os, json, time
 import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "certify"))
@@ -147,7 +148,8 @@ def hadamard_check(H):
     Hf = H.astype(np.float32)
     G = Hf @ Hf.T
     ok = pm1 and bool(np.array_equal(G, N * np.eye(N, dtype=np.float32)))
-    return dict(order=N, entries_pm1=pm1, gram_exact=ok)
+    digest = hashlib.sha256(np.ascontiguousarray(H, dtype=np.int8)).hexdigest()
+    return dict(order=N, entries_pm1=pm1, gram_exact=ok, matrix_sha256=digest)
 
 def run(g, form, conjugate=True):
     t0 = time.time(); rep = {"g": g, "form": form}
