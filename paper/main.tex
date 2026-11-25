@@ -28,7 +28,7 @@ Golay length & Weighing matrix & Prime $q$ & Hadamard order\\\midrule
 \end{center}
 \section{From weight deficit two to a conference array}
 
-Write $q+3=2c$, so $c$ is even. Let $W=W(2c,2c-2)$. Each row and column has exactly two zeros since the row and column Grams agree. The zero sets of two rows cannot meet in precisely one column, since their common nonzero support would have odd size. Therefore the rows occur in pairs with identical zero sets, each a distinct column pair. Independent row and column permutations put the zero cells on the diagonal of a $c\times c$ array of $2\times2$ cells. This is the pairing in the half-weight construction of \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf}{Gysin and Seberry, Theorem 3}.
+Write $q+3=2c$, so $c$ is even. Let $W=W(2c,2c-2)$. Each row and column has exactly two zeros since the row and column Grams agree. The zero sets of two rows cannot meet in precisely one column, since their common nonzero support would have odd size. If one row vanishes in columns $a,b$, every row vanishing in $a$ has that same zero set. Column $a$ has exactly two zeros, so exactly two rows share the pair. The distinct pairs partition the columns. Independent row and column permutations put the zero cells on the diagonal of a $c\times c$ array of $2\times2$ cells. This is the pairing in the half-weight construction of \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf}{Gysin and Seberry, Theorem 3}.
 
 Craigen identified the signed-permutation conference matrix obtained by this compression in 1995. The parity argument below gives a short proof of the cell property. \href{https://us.ticmeet.com/assets/archivos/d6f1d9b8-d39f-4888-925a-7eb81c4905cc/Craigen_handouts.pdf#page=11}{Craigen, Theorem 4 and footnote 16}
 
@@ -72,7 +72,17 @@ For the diagonal Grams, the core sum is
 \]
 Here $PJ_2=0$, $P^2=2P$, $J_2^2=2J_2$; the same equality holds with transposes reversed. The block sums of $X'$ are $I_2+R$ in every row and column, and those of $Y'$ are zero. Thus the borders cancel the term $-2J_{2n}$, and their off-diagonal Gram entries vanish by the identical scalar border equations in Kumar's proof. This gives both $XX^T+YY^T=2vI$ and $X^TX+Y^TY=2vI$. Since $X$ commutes with block copies of $S$, $Y^TY=2vI-X^TX$ commutes with them as well. Hence $\widetilde Y^T\widetilde Y=Y^TY$.
 
-The mixed Gram block is $X\widetilde Y-YX$. In the span of $(1,1)$ in the first core tensor coordinate, $X'$ is $2I_n\otimes A$, $Y'$ is $2Z$, and $\widetilde Y'$ is $2\widetilde Z$. On this subspace equality is exactly $A\widetilde z=zA$ in each cell. In the span of $(1,-1)$, both $Y'$ and $\widetilde Y'$ are twice the identity. All border products are unchanged from Kumar's proof by the zero block sums of $Z,\widetilde Z$, and the identical borders. Therefore $LL^T=2vI$. Multiplying $L$ on the right by diagonal copies of $F$ turns every signed permutation into a full sign block and doubles the Gram. The resulting ordinary Hadamard matrix has order $4v$.
+For the mixed Gram block $X\widetilde Y-YX$, write $E=e\otimes I_2$, $U=e\otimes R$ and $J=J_{2n}$. The row and column sums of $X'$ are $I_2+R$ and those of $Y',\widetilde Y'$ vanish. Using $R^2=-I_2$, block multiplication gives
+\[
+\begin{array}{c|cc}
+ &X\widetilde Y& YX\\ \hline
+(1,1)&I_2+EU^T=I_2-2nR&I_2-UE^T=I_2-2nR\\
+(1,2)&U+E\widetilde Y'=U&E+UX'=U\\
+(2,1)&-E^T+X'U^T=U^T&U^T-Y'E^T=U^T\\
+(2,2)&-J\otimes R+X'\widetilde Y'&-J\otimes R+Y'X'
+\end{array}
+\]
+It remains to show $X'\widetilde Y'=Y'X'$. On the span of $(1,1)$ in the first core coordinate, $X'$ acts as $2I_n\otimes A$, and $Y',\widetilde Y'$ act as $2Z,2\widetilde Z$. Equality follows cellwise from $A\widetilde z=zA$. On the span of $(1,-1)$ both $Y'$ and $\widetilde Y'$ act as twice the identity, which commutes with $X'$. The mixed Gram block therefore vanishes. Thus $LL^T=2vI$. Multiplying $L$ on the right by diagonal copies of $F$ turns each signed permutation into a full sign block and doubles the Gram, giving a real Hadamard matrix of order $4v$.
 
 \section{Golay inputs and the two orders}
 
@@ -86,7 +96,7 @@ One can check the weights directly. At length $g+1$, take the four words $X+z^g,
 \section{Historical scope and verification}
 The entry for each odd part in Seberry and Yamada's 1992 table carries exponent three, giving orders $8\cdot1291=10328$ and $8\cdot2083=16664$. Egan, Kotsireas, London and \'{O} Cath\'ain list both odd parts in their table of open orders $4p$. \href{https://documents.uow.edu.au/~jennie/WEBPDF/175_1992.pdf}{Seberry and Yamada, Table A.2}. \href{https://arxiv.org/pdf/2610.27175v2}{Egan et al., Table 5}.
 
-We located no earlier construction of either order. The full text of Lou, Xia and Xia (2019) was inaccessible during the review. Their abstract describes two special cases for T-matrices of prime order $6m+1$. Every prime of this form admits the representation $a^2+3b^2$ mentioned in the abstract. Whether either special case supplies a T-matrix of order 1291 or 2083 remains unresolved. Such a T-matrix system would establish the corresponding Hadamard order by an earlier route. \href{https://doi.org/10.17654/DM021020163}{Lou, Xia and Xia (2019)}. \href{https://documents.uow.edu.au/~jennie/WEB/WEB17/Xtb32_6mp1.pdf}{Xia et al. (2017), Theorem 2 and Section 3}.
+We located no earlier construction of either order. The full text of Lou, Xia and Xia (2019) was inaccessible during the review. Their abstract describes two special cases for T-matrices of prime order $6m+1$. Every prime of this form admits the representation $a^2+3b^2$ mentioned in the abstract. Whether either special case supplies a T-matrix of order 1291 or 2083 remains unresolved. Such a system would establish the corresponding Hadamard order by an earlier route. We therefore claim constructions at two orders listed as open in Table~5 of arXiv:2610.27175v2. Historical priority remains provisional. \href{https://doi.org/10.17654/DM021020163}{Lou, Xia and Xia (2019)}. \href{https://documents.uow.edu.au/~jennie/WEB/WEB17/Xtb32_6mp1.pdf}{Xia et al. (2017), Theorem 2 and Section 3}.
 
 The accompanying C++ verifier checks all required Golay and Yamada sequence correlations for both applications. Two end-to-end examples at order 76 exercise the two Golay constructions. In a separate reflection example, omitting the conjugation yields 64 failed Gram-block checks. Including it satisfies every check. The C++ verifier uses only one-dimensional inputs at the target orders.
 
@@ -94,6 +104,7 @@ The release target \texttt{make verify-full} constructs each matrix, checks that
 
 \paragraph{Role of AI.} AI assisted the derivations, the computer verification, the literature search and the exposition under the author's direction. Process-separated AI reviews checked the proofs and certificates; they are not independent expert peer review, and no independent human expert has examined the proofs. The release repository records the sources, the reviews and their dispositions.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{craigen} R. Craigen, The structure of weighing matrices having large weights,
 \emph{Designs, Codes and Cryptography} \textbf{5} (1995), 199--216.

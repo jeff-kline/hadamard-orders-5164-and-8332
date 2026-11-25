@@ -31,7 +31,7 @@ Seberry and Yamada’s historical table records Hadamard orders $8\cdot1291=1032
 
 | Claim | Evidence |
 |---|---|
-| General transfer | Algebraic proof and separate AI proof review |
+| General transfer | Algebraic proof, internal examination and a separate symbolic audit of Sections 2–3. [Proof review](kumar-weighing-audit/fable/stage2-proof-audit.md) |
 | Inputs at both orders | Exact sequence correlations checked in C++ |
 | Every entry and the full Gram matrix at both orders | `make verify-full` checks both complete matrices against the sign and Gram identities, then matches their SHA-256 digests. |
 | Historical priority | Both census entries verified. The 2019 T-matrix cases remain unresolved. |
