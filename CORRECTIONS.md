@@ -9,3 +9,5 @@ The documentation snapshot records the transfer theorem and its two applications
 After the external proof audit of commit `508d3e7`, Sections 2 and 3 were revised to spell out the row pairing, the four mixed-product blocks and the commutation on the antisymmetric subspace. The author accepted the census-relative priority wording and requested continued private review. [Audit history](kumar-weighing-audit/ATTRIBUTION.md) · [Rescan](kumar-weighing-audit/pretag-rescan.md)
 
 Version 0.1.0 was frozen privately as a release candidate on November 24, 2026. The mathematical claims and accepted priority qualification are those reviewed above.
+
+Version 0.1.0 was subsequently published and admitted. The living repository adds the DOI to the paper and citation metadata and records the archive checks. The tag preserves the reviewed manuscript and its original title block. [Version DOI](https://doi.org/10.5281/zenodo.24519197) · [Admission record](ADMISSION.md)

@@ -1,4 +1,4 @@
-# Verification for the 0.1.0 release candidate
+# Verification for version 0.1.0
 
 The proof applies to every prime and weighing matrix satisfying the theorem. Computations check the two applications and the effect of the conjugation.
 
@@ -12,7 +12,7 @@ The proof applies to every prime and weighing matrix satisfying the theorem. Com
 ## Reproduce
 
 - `make verify` uses C++17 and compares stdout against the two tracked files in `evidence/`. It checks the target input sequences and the small end-to-end controls.
-- `make paper` uses pdfLaTeX with a fixed source date. The reference build used pdfTeX 1.40.22 from TeX Live 2021. The PDF SHA-256 is `423b7098d1eda76d464c2d0e18bf5ea134329846c82af1d1082de18b9318961c`.
+- `make paper` uses pdfLaTeX with a fixed source date. The reference build used pdfTeX 1.40.22 from TeX Live 2021. The tagged PDF has SHA-256 `423b7098d1eda76d464c2d0e18bf5ea134329846c82af1d1082de18b9318961c`. The living PDF includes the version DOI in the title block. Its checksum appears in [the manifest](MANIFEST.sha256).
 - `make verify-full` is an opt-in target for the two full builds. It runs each order separately, saves the JSON under `build/`, and uses jq to require all stage checks, the expected order and weight, and the expected reflection count. It requires jq and a virtual-environment interpreter with NumPy. The default interpreter is `.venv/bin/python`. To reuse a compatible documented environment, pass `FULL_PY=/absolute/path/to/venv/bin/python`. For a new project environment, install the pinned dependency with `.venv/bin/python -m pip install -r evidence/requirements.txt`.
 - `shasum -a 256 -c MANIFEST.sha256` checks the distributed files.
 
@@ -21,5 +21,7 @@ The proof applies to every prime and weighing matrix satisfying the theorem. Com
 The bounded C++ verifier reproduced both reference files with Apple clang 21.0.0. The independent builder's small controls were rerun with Python 3.9.6 and NumPy 2.0.2 in an explicitly selected virtual environment. Both order-76 examples and the order-172 and order-300 examples passed the full-result predicate. Dropping the conjugation at order 300 made the Gram test fail and the predicate rejected that result. The full Gram checks at both target orders were reproduced from a fresh clone of `d8ad6c4`. The added hash comparison was tested on small matrices, including a changed digest. The [review history](kumar-weighing-audit/ATTRIBUTION.md) records which revision each test covered. The 120 numerical rows in Kumar’s pinned table were checked against the two corollary formulas and classical Golay lengths, giving exactly 5164 and 8332.
 
 ## Review dispositions
+
+The Zenodo archive for `v0.1.0` is 302336 bytes with SHA-256 `efa41a0074337ad6cf8a8048a32ddee813e60df55578a2928893207e44d1fbee`. It matched the GitHub tag ZIP byte for byte. A fresh extraction reproduced the bounded verifier output, the tagged PDF and all 33 manifest entries. [Archived version](https://doi.org/10.5281/zenodo.24519197)
 
 The [original draft review](evidence/claude-draft-review.md) predates this snapshot. The release includes its full-matrix evidence, opt-in reproduction target, formal references, citation metadata and verification record. The paper and README use the author’s AI disclosure. The [proof and priority record](kumar-weighing-audit/README.md) includes the additional signed-group comparison. The claim of existence and the unresolved historical question are reported separately.

@@ -2,7 +2,7 @@
 
 Jeffery Kline
 
-**Status.** Version 0.1.0 release candidate, frozen November 24, 2026. [Release record](ADMISSION.md)
+**Status: version 0.1.0 admitted November 24, 2026.** Admission records the proof review, reproducibility checks and archive verification. Independent expert peer review remains outstanding. [Tagged release](https://github.com/jeff-kline/hadamard-orders-5164-and-8332/releases/tag/v0.1.0) · [Version DOI](https://doi.org/10.5281/zenodo.24519197) · [Concept DOI](https://doi.org/10.5281/zenodo.24519196) · [Admission record](ADMISSION.md)
 
 ## Introduction
 
