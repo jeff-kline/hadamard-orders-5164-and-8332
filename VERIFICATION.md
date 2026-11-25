@@ -12,7 +12,7 @@ The proof applies to every prime and weighing matrix satisfying the theorem. Com
 ## Reproduce
 
 - `make verify` uses C++17 and compares stdout against the two tracked files in `evidence/`. It checks the target input sequences and the small end-to-end controls.
-- `make paper` uses pdfLaTeX with a fixed source date. The reference build used pdfTeX 1.40.22 from TeX Live 2021. The PDF SHA-256 is `161e67c1d6b19a15e92dce390d3d59e8c05baaa7d1c003bbc899eefd89ab1818`.
+- `make paper` uses pdfLaTeX with a fixed source date. The reference build used pdfTeX 1.40.22 from TeX Live 2021. The PDF SHA-256 is `423b7098d1eda76d464c2d0e18bf5ea134329846c82af1d1082de18b9318961c`.
 - `make verify-full` is an opt-in target for the two full builds. It runs each order separately, saves the JSON under `build/`, and uses jq to require all stage checks, the expected order and weight, and the expected reflection count. It requires jq and a virtual-environment interpreter with NumPy. The default interpreter is `.venv/bin/python`. To reuse a compatible documented environment, pass `FULL_PY=/absolute/path/to/venv/bin/python`. For a new project environment, install the pinned dependency with `.venv/bin/python -m pip install -r evidence/requirements.txt`.
 - `shasum -a 256 -c MANIFEST.sha256` checks the distributed files.
 

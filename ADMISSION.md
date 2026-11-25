@@ -1,5 +1,7 @@
 # Documentation release record
 
+Current verdict: NOT YET ADMITTED.
+
 **Current state: CANDIDATE.** Version 0.1.0, November 24, 2026. The frozen commit identifies the private candidate. The planned archive route is Zenodo’s GitHub integration.
 
 | Item | Status | Evidence |

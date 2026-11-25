@@ -15,7 +15,7 @@
 We construct real Hadamard matrices of orders 5164 and 8332, both listed as open in the 2026 survey by Egan, Kotsireas, London and \'{O} Cath\'ain (arXiv:2610.27175v2). For every prime $q\equiv1\pmod4$, we prove that a real weighing matrix of order $q+3$ and weight $q+1$ gives a Hadamard matrix of order $4(q+2)$. Conjugation by a 45-degree rotation in one block of Kumar's array admits the reflection cells that arise from a real weighing matrix. Two weighing matrices constructed by Gysin and Seberry in 1995 then give the stated orders.
 \end{abstract}
 \section{The construction}
-A real Hadamard matrix of order $h$ has entries $\pm1$ and mutually orthogonal rows. A real weighing matrix $W(N,w)$ has entries $0,\pm1$ and satisfies $WW^T=wI_N$. Kumar identified quaternary conference matrices of orders 646 and 1042 as sufficient for the two Hadamard orders considered here. We extend his array to use any real weighing matrix with the parameters below. \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/FRONTIER.md}{Kumar's frontier table}.
+A real Hadamard matrix of order $h$ has entries $\pm1$ and mutually orthogonal rows. A real weighing matrix $W(N,w)$ has entries $0,\pm1$ and satisfies $WW^T=wI_N$. Kumar~\cite{kumar} identified quaternary conference matrices of orders 646 and 1042 as sufficient for the two Hadamard orders considered here. We extend his array to use any real weighing matrix with the parameters below. \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/FRONTIER.md}{Kumar's frontier table}.
 
 \medskip\noindent\textbf{Theorem.} Let $q\equiv1\pmod4$ be prime. A real $W(q+3,q+1)$ gives a real Hadamard matrix of order $4(q+2)$.
 
@@ -30,7 +30,7 @@ Golay length & Weighing matrix & Prime $q$ & Hadamard order\\\midrule
 
 Write $q+3=2c$, so $c$ is even. Let $W=W(2c,2c-2)$. Each row and column has exactly two zeros since the row and column Grams agree. The zero sets of two rows cannot meet in precisely one column, since their common nonzero support would have odd size. If one row vanishes in columns $a,b$, every row vanishing in $a$ has that same zero set. Column $a$ has exactly two zeros, so exactly two rows share the pair. The distinct pairs partition the columns. Independent row and column permutations put the zero cells on the diagonal of a $c\times c$ array of $2\times2$ cells. This is the pairing in the half-weight construction of \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf}{Gysin and Seberry, Theorem 3}.
 
-Craigen identified the signed-permutation conference matrix obtained by this compression in 1995. The parity argument below gives a short proof of the cell property. \href{https://us.ticmeet.com/assets/archivos/d6f1d9b8-d39f-4888-925a-7eb81c4905cc/Craigen_handouts.pdf#page=11}{Craigen, Theorem 4 and footnote 16}
+Craigen~\cite{craigen} identified the signed-permutation conference matrix obtained by this compression in 1995. The parity argument below gives a short proof of the cell property. \href{https://us.ticmeet.com/assets/archivos/d6f1d9b8-d39f-4888-925a-7eb81c4905cc/Craigen_handouts.pdf#page=11}{Craigen, Theorem 4 and footnote 16}
 
 Let $h_{ij}$ be the product of the four signs in cell $i,j$, for $i\ne j$. Within row pair $i$, orthogonality gives $c-1$ disagreements, so $\prod_{j\ne i}h_{ij}=(-1)^{c-1}$. Now compare each of those two rows with the same row of pair $k\ne i$. In each comparison there are $2c-4$ common nonzeros and $c-2$ disagreements. Multiplying the two sign products cancels the signs from row $k$, giving $\prod_{j\ne i,k}h_{ij}=1$. Consequently $h_{ik}=(-1)^{c-1}=-1$ for every full cell. Each full cell is a Hadamard matrix of order two.
 
@@ -44,7 +44,7 @@ Independently multiply block rows and columns of $D$ by signed permutations to m
 \[
 ZZ^T=Z^TZ=(nI_n-J_n)\otimes I_2 .
 \]
-Let $P=\left(\begin{smallmatrix}1&-1\\-1&1\end{smallmatrix}\right)$, $J_2$ the all-ones matrix, and $M,N$ Yamada's real symmetric circulants of order $n$, with $M$ zero on the diagonal, $N$ full, and $M^2+N^2=qI_n$. Use the core and borders from \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/complex-hadamard/CONFERENCE.md#3-the-template}{Kumar, Theorem 3}:
+Let $P=\left(\begin{smallmatrix}1&-1\\-1&1\end{smallmatrix}\right)$, $J_2$ the all-ones matrix, and $M,N$ the real symmetric circulants of order $n$ from Yamada~\cite{yamada}, with $M$ zero on the diagonal, $N$ full, and $M^2+N^2=qI_n$. Use the core and borders from \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/complex-hadamard/CONFERENCE.md#3-the-template}{Kumar, Theorem 3}:
 \[
  X'=P\otimes(M\otimes A+N\otimes A^T)
        +J_2\otimes I_n\otimes A,\qquad
@@ -86,7 +86,7 @@ It remains to show $X'\widetilde Y'=Y'X'$. On the span of $(1,1)$ in the first c
 
 \section{Golay inputs and the two orders}
 
-For a binary Golay pair $X,Y$ of length $g$, write polynomials in $z$, $\mathcal N(U)=U(z)U(z^{-1})$, so $\mathcal N(X)+\mathcal N(Y)=2g$. Gysin and Seberry's Theorem 7 supplies both $W(4g+4,4g+2)$ and $W(4g+12,4g+10)$. Their Corollary 5 explicitly includes $t=323,521$ for $W(4t,4t-2)$. \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf#page=6}{Paper, p. 162}
+For a binary Golay pair $X,Y$ of length $g$, write polynomials in $z$, $\mathcal N(U)=U(z)U(z^{-1})$, so $\mathcal N(X)+\mathcal N(Y)=2g$. Theorem~7 of Gysin and Seberry~\cite{gs} supplies both $W(4g+4,4g+2)$ and $W(4g+12,4g+10)$. Their Corollary 5 explicitly includes $t=323,521$ for $W(4t,4t-2)$. \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf#page=6}{Paper, p. 162}
 
 One can check the weights directly. At length $g+1$, take the four words $X+z^g,X-z^g,Y,Y$, padding the last two with zeros. Their norms sum to $4g+2$. At length $g+3$, take $X\pm z^g(1+z-z^2)$ and $Y\pm z^g(1+z^2)$. The two tail norms sum to five, so these four norms sum to $4g+10$. Evaluation on the cyclic shift of the respective length in the Goethals–Seidel array gives the stated weighing matrices. Binary Golay pairs exist at $320=2^5\cdot10$ and $520=2\cdot10\cdot26$ by the classical product construction.
 
@@ -94,9 +94,9 @@ One can check the weights directly. At length $g+1$, take the four words $X+z^g,
 
 
 \section{Historical scope and verification}
-The entry for each odd part in Seberry and Yamada's 1992 table carries exponent three, giving orders $8\cdot1291=10328$ and $8\cdot2083=16664$. Egan, Kotsireas, London and \'{O} Cath\'ain list both odd parts in their table of open orders $4p$. \href{https://documents.uow.edu.au/~jennie/WEBPDF/175_1992.pdf}{Seberry and Yamada, Table A.2}. \href{https://arxiv.org/pdf/2610.27175v2}{Egan et al., Table 5}.
+The entry for each odd part in Seberry and Yamada's 1992 table~\cite{sy} carries exponent three, giving orders $8\cdot1291=10328$ and $8\cdot2083=16664$. Egan, Kotsireas, London and \'{O} Cath\'ain list both odd parts in their table of open orders $4p$~\cite{survey}. \href{https://documents.uow.edu.au/~jennie/WEBPDF/175_1992.pdf}{Seberry and Yamada, Table A.2}. \href{https://arxiv.org/pdf/2610.27175v2}{Egan et al., Table 5}.
 
-We located no earlier construction of either order. The full text of Lou, Xia and Xia (2019) was inaccessible during the review. Their abstract describes two special cases for T-matrices of prime order $6m+1$. Every prime of this form admits the representation $a^2+3b^2$ mentioned in the abstract. Whether either special case supplies a T-matrix of order 1291 or 2083 remains unresolved. Such a system would establish the corresponding Hadamard order by an earlier route. We therefore claim constructions at two orders listed as open in Table~5 of arXiv:2610.27175v2. Historical priority remains provisional. \href{https://doi.org/10.17654/DM021020163}{Lou, Xia and Xia (2019)}. \href{https://documents.uow.edu.au/~jennie/WEB/WEB17/Xtb32_6mp1.pdf}{Xia et al. (2017), Theorem 2 and Section 3}.
+We located no earlier construction of either order. The full text of Lou, Xia and Xia~\cite{lxx} was inaccessible during the review. Their abstract describes two special cases for T-matrices of prime order $6m+1$. Every prime of this form admits the representation $a^2+3b^2$ mentioned in the abstract. Whether either special case supplies a T-matrix of order 1291 or 2083 remains unresolved. Such a system would establish the corresponding Hadamard order by an earlier route. We therefore claim constructions at two orders listed as open in Table~5 of arXiv:2610.27175v2. Historical priority remains provisional. \href{https://doi.org/10.17654/DM021020163}{Lou, Xia and Xia (2019)}. \href{https://documents.uow.edu.au/~jennie/WEB/WEB17/Xtb32_6mp1.pdf}{Xia et al. (2017), Theorem 2 and Section 3}.
 
 The accompanying C++ verifier checks all required Golay and Yamada sequence correlations for both applications. Two end-to-end examples at order 76 exercise the two Golay constructions. In a separate reflection example, omitting the conjugation yields 64 failed Gram-block checks. Including it satisfies every check. The C++ verifier uses only one-dimensional inputs at the target orders.
 
