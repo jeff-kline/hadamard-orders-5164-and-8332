@@ -1,0 +1,4 @@
+conference Gram = 9I; determinant product -1 on rows infinity,0 and columns 8,7
+H(76) lower-triangular block Gram errors: twisted=0 untwisted=64
+Golay g=4 -> W(20,18) -> D4(10) -> H(76): 0 Gram errors
+Golay g=2 -> W(20,18) -> D4(10) -> H(76): 0 Gram errors

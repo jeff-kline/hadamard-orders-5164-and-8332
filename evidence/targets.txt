@@ -1,0 +1,2 @@
+g=320, padded length=323, weight=1290, Yamada length=645, q=1289: all correlations and entry patterns verified
+g=520, padded length=521, weight=2082, Yamada length=1041, q=2081: all correlations and entry patterns verified
