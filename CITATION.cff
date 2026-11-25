@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the paper and identify the revision used."
 title: "Hadamard matrices of orders 5164 and 8332 from real weighing matrices"
-version: "0.1.0-dev"
+version: "0.1.0"
 repository-code: "https://github.com/jeff-kline/hadamard-orders-5164-and-8332"
 type: software
 authors:

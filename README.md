@@ -2,7 +2,7 @@
 
 Jeffery Kline
 
-**Status.** Private review version 0.1.0-dev, November 24, 2026. [Review record](ADMISSION.md)
+**Status.** Version 0.1.0 release candidate, frozen November 24, 2026. [Release record](ADMISSION.md)
 
 ## Introduction
 
